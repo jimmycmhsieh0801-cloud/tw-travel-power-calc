@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 出國行動電源 Wh 登機計算機 × 華航/長榮/星宇/虎航航空規定與 GaN 快充推薦</title>
+  <meta name="description" content="免費計算行動電源 mAh 換算 Wh 瓦時是否符合 2026 航空登機規定（≤100Wh、101~160Wh），整合華航、長榮、星宇、台灣虎航最新機上禁用規範與出國 GaN 快充瓦數計算。" />
+  <meta name="keywords" content="行動電源登機規定2026,行動電源Wh換算mAh,100Wh是多少mAh,長榮華航星宇虎航行動電源,GaN快充頭瓦數計算" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "2026 出國行動電源 Wh 登機換算與 GaN 快充配對計算機",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "100Wh 行動電源大約是多少 mAh？20000mAh 可以帶上飛機嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "以常見鋰電池電芯電壓 3.7V 計算，20000mAh 等於 74Wh，小於 100Wh 航空上限，可以手提帶上飛機；100Wh 約等同於 27000mAh（3.7V）。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026 年搭華航、長榮、星宇、台灣虎航可以在飛機上用行動電源嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不行。台灣主要國籍航空目前皆規定飛行途中全程禁止使用行動電源為電子產品充電，也禁止使用機上座位插座替行動電源充電，且行動電源嚴禁放入託運行李。"
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #ea580c;
+      --accent-bg: #fff7ed;
+      --good: #059669;
+      --warn: #d97706;
+      --danger: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 20px 16px 48px; }
+    header { text-align: center; margin-bottom: 24px; }
+    header h1 { font-size: 1.55rem; margin: 0 0 8px; }
+    header p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .badge {
+      display: inline-block; background: #e0f2fe; color: var(--primary-dark);
+      font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+    .tab-btn {
+      padding: 12px; border: 1px solid var(--border); background: var(--card);
+      border-radius: 10px; font-size: 0.98rem; font-weight: 600; cursor: pointer; color: var(--muted);
+    }
+    .tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 680px) { .grid-2 { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
+    input[type="number"], select {
+      width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: #fff;
+    }
+    .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .chip {
+      padding: 6px 11px; border: 1px solid var(--border); background: #f8fafc;
+      border-radius: 999px; font-size: 0.84rem; cursor: pointer;
+    }
+    .chip:hover { border-color: var(--primary); color: var(--primary-dark); }
+    .result-box { margin-top: 18px; padding: 16px; border-radius: 12px; background: #f1f5f9; }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .metric { background: #fff; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border); }
+    .metric .label { font-size: 0.8rem; color: var(--muted); }
+    .metric .value { font-size: 1.25rem; font-weight: 700; margin-top: 2px; }
+    .metric .value.good { color: var(--good); }
+    .metric .value.warn { color: var(--warn); }
+    .metric .value.danger { color: var(--danger); }
+    .check-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .check-item {
+      display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+      border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 0.92rem;
+    }
+    .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+    .gear-card {
+      border: 1px solid var(--border); border-radius: 12px; padding: 14px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .gear-tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--accent);
+      background: var(--accent-bg); padding: 2px 8px; border-radius: 6px; margin-bottom: 6px;
+    }
+    .gear-card h3 { font-size: 1rem; margin: 0 0 6px; }
+    .gear-card p { font-size: 0.85rem; color: var(--muted); margin: 0 0 12px; }
+    .cta-btn {
+      display: block; text-align: center; padding: 9px 12px; border-radius: 8px;
+      background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.88rem; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { color: var(--muted); font-weight: 600; }
+    .seo-section h2 { font-size: 1.15rem; margin: 0 0 10px; }
+    .seo-section h3 { font-size: 1rem; margin: 18px 0 6px; color: var(--primary-dark); }
+    .seo-section p, .seo-section li { font-size: 0.92rem; color: #334155; }
+    .hidden { display: none; }
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">依據 IATA 與 2026 台灣主要航空公司最新飛安規範</div>
+      <h1>2026 行動電源 Wh 登機計算機 × 出國 GaN 快充推薦</h1>
+      <p>1 秒換算 mAh 是否超過 100Wh 登機上限，並算出出國該帶幾瓦 GaN 多孔快充頭</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="wh">1. 行動電源 Wh 登機換算</button>
+      <button class="tab-btn" data-tab="charger">2. 出國 GaN 快充瓦數配對</button>
+    </div>
+
+    <!-- Tab 1: Wh Calculator -->
+    <section id="tab-wh" class="card">
+      <label>快速選擇常見行動電源容量</label>
+      <div class="preset-chips" id="mahPresets">
+        <button type="button" class="chip" data-mah="5000">5,000 mAh</button>
+        <button type="button" class="chip" data-mah="10000">10,000 mAh</button>
+        <button type="button" class="chip" data-mah="20000">20,000 mAh</button>
+        <button type="button" class="chip" data-mah="27000">27,000 mAh</button>
+        <button type="button" class="chip" data-mah="30000">30,000 mAh</button>
+        <button type="button" class="chip" data-mah="50000">50,000 mAh</button>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label for="mahInput">行動電源標示容量（mAh）</label>
+          <input type="number" id="mahInput" value="20000" min="0" max="200000" step="500" />
+        </div>
+        <div>
+          <label for="voltageInput">電芯標稱電壓（V）</label>
+          <select id="voltageInput">
+            <option value="3.7" selected>3.7V（絕大多數鋰電池標準電芯）</option>
+            <option value="3.85">3.85V（部分高密度鋰聚合物電芯）</option>
+            <option value="5.0">5.0V（少數僅標輸出電壓者）</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-grid">
+          <div class="metric">
+            <div class="label">換算瓦時（Wh）</div>
+            <div class="value" id="whValue">--</div>
+          </div>
+          <div class="metric">
+            <div class="label">登機判定結果</div>
+            <div class="value" id="whVerdict">--</div>
+          </div>
+        </div>
+        <p id="whDetail" style="margin: 12px 0 0; font-size: 0.9rem; color: #334155;"></p>
+      </div>
+    </section>
+
+    <!-- Tab 2: GaN Charger Pairing -->
+    <section id="tab-charger" class="card hidden">
+      <label>勾選你出國「會同時一起充電」的設備</label>
+      <div class="check-list">
+        <label class="check-item"><input type="checkbox" class="device-check" value="phone" checked /> 手機 (iPhone / Android 約 25W)</label>
+        <label class="check-item"><input type="checkbox" class="device-check" value="tablet" /> 平板 (iPad 約 30W)</label>
+        <label class="check-item"><input type="checkbox" class="device-check" value="ultrabook" checked /> 輕薄筆電 (MacBook Air 等約 65W)</label>
+        <label class="check-item"><input type="checkbox" class="device-check" value="pro_laptop" /> 高階/電競筆電 (MBP 16" 等約 100W)</label>
+        <label class="check-item"><input type="checkbox" class="device-check" value="powerbank" /> 晚上回飯店補充電源 (30W)</label>
+        <label class="check-item"><input type="checkbox" class="device-check" value="watch_earbuds" /> 手錶 / 藍牙耳機 (10W)</label>
+      </div>
+
+      <div class="result-box">
+        <div class="result-grid">
+          <div class="metric">
+            <div class="label">同時充電合計需求</div>
+            <div class="value" id="totalWattsEl">--</div>
+          </div>
+          <div class="metric">
+            <div class="label">建議選購充電器規格</div>
+            <div class="value good" id="chargerTierEl">--</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monetization / Gear Section -->
+    <section class="card">
+      <h2 style="font-size: 1.15rem; margin: 0 0 6px;">出國不斷電合規裝備推薦</h2>
+      <p style="margin: 0 0 14px; color: var(--muted); font-size: 0.88rem;">機場安檢最怕外殼沒印 Wh 被當場沒收！出國前建議備齊合規標示行動電源與多孔 GaN 快充頭。（含合作推廣連結）</p>
+      <div class="gear-grid" id="gearGrid"></div>
+    </section>
+
+    <!-- SEO Content -->
+    <article class="card seo-section">
+      <h2>2026 華航、長榮、星宇、台灣虎航行動電源最新規定總整理</h2>
+      <p>因應國際航空鋰電池飛安強化規範，台灣主要航空公司針對行動電源皆採取以下四大鐵律：</p>
+      <ul>
+        <li><strong>嚴禁託運</strong>：所有行動電源與備用鋰電池只能放入隨身手提行李帶進客艙。</li>
+        <li><strong>機上全程禁用</strong>：航程中禁止使用行動電源替手機充電，也禁止使用機上座位插座或 USB 孔替行動電源充電。</li>
+        <li><strong>標示必須清晰</strong>：外殼必須清楚印有 <code>Wh</code> 或 <code>mAh + 電壓</code> 數值，磨損模糊或無標示者安檢有權拒絕帶上機。</li>
+        <li><strong>防短路保護</strong>：建議單獨放入夾鏈袋或防撞收納包，避免接頭與鑰匙硬幣接觸發生短路。</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>航空公司</th>
+            <th>≤ 100Wh（約 27,000mAh 以下）</th>
+            <th>101Wh ～ 160Wh</th>
+            <th>機上使用／充電</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>中華航空 (CI)</td><td>可手提上機</td><td>須經華航同意，限 2 顆</td><td>全程禁止</td></tr>
+          <tr><td>長榮航空 (BR)</td><td>可手提上機</td><td>須經長榮同意，限 2 顆</td><td>全程禁止</td></tr>
+          <tr><td>星宇航空 (JX)</td><td>可手提上機</td><td>須經星宇同意，限 2 顆</td><td>全程禁止</td></tr>
+          <tr><td>台灣虎航 (IT)</td><td>小於 100Wh，每人限 2 顆</td><td>須經虎航同意，限 2 顆</td><td>全程禁止</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <footer>
+      <p>註：各國機場與不同航空公司執法細節偶有調整，出國前請以實際搭乘航空公司官網最新公告為準。相關工具連結：<a href="https://jimmycmhsieh0801-cloud.github.io/tw-power-calc/">2026 台電電費級距試算器</a></p>
+    </footer>
+  </div>
+
+  <script src="affiliate_config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
