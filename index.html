@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MX4TNZZ4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a.cta-btn, a.btn, a.lead-cta');
+      if (a) {
+        window.dataLayer.push({
+          event: 'outbound_monetize_click',
+          link_url: a.href,
+          link_text: (a.textContent || '').trim()
+        });
+      }
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2026 出國行動電源 Wh 登機計算機 × 華航/長榮/星宇/虎航航空規定與 GaN 快充推薦</title>
